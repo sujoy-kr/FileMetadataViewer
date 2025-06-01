@@ -14,7 +14,6 @@ namespace FileMetadataViewer
             }
 
             string filePath = args[0];
-
             if (!File.Exists(filePath))
             {
                 Console.WriteLine("File not found.");
@@ -22,7 +21,6 @@ namespace FileMetadataViewer
             }
 
             FileInfo fileInfo = new FileInfo(filePath);
-
             Console.WriteLine($"{fileInfo.FullName} metadata:");
             Console.WriteLine($"File Name      : {fileInfo.Name}");
             Console.WriteLine($"File Extension : {fileInfo.Extension}");
@@ -50,8 +48,6 @@ namespace FileMetadataViewer
                 Console.WriteLine($"Exported to: {exportDirectoryWithName}");
                 openFileExplorer(exportDirectoryWithName);
             }
-
-
         }
 
         public static string exportToCSV(FileInfo fileInfo)
@@ -101,6 +97,5 @@ namespace FileMetadataViewer
                 System.Diagnostics.Process.Start("xdg-open", $"\"{Path.GetDirectoryName(csvPath)}\"");
             }
         }
-
     }
 }
