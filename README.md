@@ -1,10 +1,10 @@
-# 📁 FileMetadataViewer
+# FileMetadataViewer
 
 A simple cross-platform CLI tool built with **.NET 9.0** to extract and optionally export file metadata to a CSV file.
 
 ---
 
-## ✨ Features
+## Features
 
 -   View file metadata directly in the terminal
 -   Export metadata to CSV using `--export`
@@ -13,7 +13,7 @@ A simple cross-platform CLI tool built with **.NET 9.0** to extract and optional
 
 ---
 
-## ⚙️ Technologies Used
+## Technologies Used
 
 -   **.NET 9.0**
 -   `System.Runtime.InteropServices`
@@ -22,15 +22,15 @@ A simple cross-platform CLI tool built with **.NET 9.0** to extract and optional
 
 ---
 
-## 🚀 Usage
+## Usage
 
-### 🧪 Example Command
+### Example Command
 
 ```bash
 dotnet run "C:/Users/sujoy/Downloads/logo.png" --export
 ```
 
-### 🖥️ Output:
+### Output:
 
 ```
 C:\Users\sujoy\Downloads\logo.png metadata:
@@ -54,22 +54,22 @@ File Explorer will open automatically and select the generated `.csv` file.
 
 ---
 
-## 🧾 Arguments
+## Arguments
 
 -   `file_path` – Path to the file you want to inspect
 -   `--export` – (Optional) Saves metadata to `Documents/MetadataCSV/<original_filename>.csv`
 
 ---
 
-## 🏗️ Building and Publishing
+## Building and Publishing
 
-### ✅ Windows (Standalone `.exe`):
+### Windows (Standalone `.exe`):
 
 ```bash
 dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
 ```
 
-📌 Output Path:
+Output Path:
 
 ```
 bin\Release\net9.0\win-x64\publish\FileMetadataViewer.exe
@@ -83,13 +83,13 @@ FileMetadataViewer "C:\Path\To\File.txt" --export
 
 ---
 
-### 🐧 Linux (Intel/AMD):
+### Linux (Intel/AMD):
 
 ```bash
 dotnet publish -c Release -r linux-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
 ```
 
-### 🍏 macOS (Apple M1/M2):
+### macOS (Apple M1/M2):
 
 ```bash
 dotnet publish -c Release -r osx-arm64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
@@ -97,7 +97,7 @@ dotnet publish -c Release -r osx-arm64 --self-contained true -p:PublishSingleFil
 
 ---
 
-## 💡 What the `dotnet publish` flags mean:
+## What the `dotnet publish` flags mean:
 
 -   `-c Release`: Use the Release configuration
 -   `-r win-x64` / `linux-x64` / `osx-arm64`: Target runtime/architecture
@@ -107,7 +107,7 @@ dotnet publish -c Release -r osx-arm64 --self-contained true -p:PublishSingleFil
 
 ---
 
-## 📝 Notes
+## Notes
 
 -   The `openFileExplorer()` function was generated with the help of ChatGPT and currently works on **Windows**. macOS/Linux are untested but logic is there. You are welcome to test.
 -   If you use `--export`, the `.csv` will be saved to your **"Documents/MetadataCSV"** folder.
